@@ -1,5 +1,5 @@
-import { AnimatePresence, motion } from "framer-motion";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import { motion } from "framer-motion";
 import { BiCopy } from "react-icons/bi";
 import { BsCheck } from "react-icons/bs";
 import { RxExternalLink } from "react-icons/rx";

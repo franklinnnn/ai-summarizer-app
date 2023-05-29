@@ -1,12 +1,12 @@
 import React, { createContext, useEffect, useRef, useState } from "react";
 import Hero from "./Hero";
 import Search from "./Search";
-import { useLazyGetSummaryQuery } from "../services/article";
 import History from "./History";
 import SummaryResult from "./SummaryResult";
+import About from "./About";
+import { useLazyGetSummaryQuery } from "../services/article";
 import { BsTriangleFill } from "react-icons/bs";
 import { AnimatePresence } from "framer-motion";
-import About from "./About";
 
 export const SearchContext = createContext("");
 
@@ -72,13 +72,13 @@ const Main = () => {
       <AnimatePresence>
         <section className="flex flex-col gap-3 w-full">
           <h2
-            className="flex items-center gap-1 font-title font-bold text-slate-100 text-2xl capitalize hover:cursor-pointer hover:underline w-1/3"
+            className="flex items-center gap-1 font-title font-bold text-slate-100 text-2xl capitalize hover:cursor-pointer hover:underline w-1/3 group"
             onClick={() => setShowHistory(!showHistory)}
           >
             Summary history
             <span
-              className={`text-xs rotate-90 ${
-                showHistory && "rotate-180"
+              className={`text-xs ${
+                showHistory ? "rotate-180" : "rotate-90 "
               } ease-in-out duration-150`}
             >
               <BsTriangleFill />

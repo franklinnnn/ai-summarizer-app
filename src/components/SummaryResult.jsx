@@ -1,6 +1,6 @@
 import React from "react";
 import { loader } from "../assets";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 const SummaryResult = ({ article, error, isFetching }) => {
   const variants = {
