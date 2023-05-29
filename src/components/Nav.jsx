@@ -1,4 +1,5 @@
 import React from "react";
+import { logo } from "../assets";
 
 const Nav = () => {
   return (
@@ -6,8 +7,13 @@ const Nav = () => {
       <div className="w-full flex justify-between items-center p-4">
         <a
           href="https://summable.vercel.app/"
-          className="font-title text-slate-100 text-4xl capitalize max-sm:text-2xl"
+          className="flex items-center gap-1 font-title text-slate-100 text-4xl capitalize max-sm:text-2xl"
         >
+          <img
+            src={logo}
+            alt="Summable logo"
+            className="w-8 h-8 object-contain"
+          />
           Summable
         </a>
         <button
