@@ -1,26 +1,18 @@
-import { logo } from "../assets";
 const Hero = () => {
   return (
-    <header className="w-full flex justify-center items-center flex-col">
-      <nav className="w-full flex justify-between items-center mb-10 pt-3">
-        <img src={logo} alt="logo" className="w-28 object-contain" />
-        <button
-          type="button"
-          onClick={() => window.open("/")}
-          className="black_btn"
-        >
-          GitHub
-        </button>
-      </nav>
-
-      <h1 className="head_text">
-        Summarize articles with <br className="max-md:hidden" />
-        <span className="orange_gradient">OpenAI GPT-4</span>
-      </h1>
-      <h2 className="desc">
-        Simplify your reading with Summize, an open-source article summarizer
-      </h2>
-    </header>
+    <section>
+      <header className="w-full flex justify-center items-center flex-col">
+        <h1 className="font-title mt-5 text-5xl font-extrabold leading-[1.15] text-slate-100 sm:text-6xl text-center">
+          Summarize articles with
+          <span className="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 bg-clip-text text-transparent ml-4">
+            AI
+          </span>
+        </h1>
+        <h2 className="font-body mt-5 text-lg text-slate-100  sm:text-xl text-center max-w-2xl">
+          Simplify your reading with Summable, an open-source article summarizer
+        </h2>
+      </header>
+    </section>
   );
 };
 

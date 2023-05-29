@@ -1,7 +1,7 @@
-import React from "react";
-import Hero from "./components/Hero";
-import Demo from "./components/Demo";
 import "./App.css";
+import Nav from "./components/Nav";
+import Main from "./components/Main";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
@@ -9,10 +9,8 @@ const App = () => {
       <div className="main">
         <div className="gradient" />
       </div>
-      <div className="app">
-        <Hero />
-        <Demo />
-      </div>
+      <Nav />
+      <Main />
     </main>
   );
 };

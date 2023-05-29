@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        satoshi: ["Satoshi", "sans-serif"],
-        inter: ["Inter", "sans-serif"],
+        title: ["Clash Display", "sans-serif"],
+        body: ["Archivo", "sans-serif"],
       },
     },
   },
