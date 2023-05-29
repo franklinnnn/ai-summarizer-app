@@ -34,9 +34,22 @@ const About = ({ showAbout, setShowAbout }) => {
         <div
           className={`flex items-center gap-2 text-xl ${showAbout && "hidden"}`}
         >
-          <AiOutlineTwitter />
-          <AiFillFacebook />
-          <span className="text-xs">{date.getFullYear()} Franklin Assa</span>
+          <a href="" target="_blank" className="hover:text-slate-100/80">
+            <AiOutlineTwitter />
+          </a>
+          <a href="" target="_blank" className="hover:text-slate-100/80">
+            <AiFillFacebook />
+          </a>
+          <span className="text-xs">
+            {date.getFullYear()}{" "}
+            <a
+              href="https://franklinnn.com"
+              target="_blank"
+              className="hover:text-slate-100/80 hover:underline"
+            >
+              Franklin Assa
+            </a>
+          </span>
         </div>
       </div>
       {showAbout && (
