@@ -15,7 +15,7 @@ const Nav = () => {
           onClick={() =>
             window.open("https://github.com/franklinnnn/ai-summarizer-app")
           }
-          className="font-body text-slate-100 bg-black py-1 px-4 rounded border border-black hover:text-black hover:bg-slate-100 transition-all max-sm:text-sm max-sm:px-2"
+          className="font-body text-slate-100 bg-slate-100/40 py-1 px-4 rounded border border-slate-100/60 hover:text-slate-800 hover:bg-slate-100 transition-all max-sm:text-sm max-sm:px-2"
         >
           GitHub
         </button>
