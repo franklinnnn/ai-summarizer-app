@@ -1,5 +1,7 @@
 ## Article Summarizer app using OpenAI GPT-4
 
+![Summable demo 1](/demo/demo01.gif) ![Summable demo 2](/demo/demo02.gif)
+
 - Framework: [Vite+React](https://vitejs.dev/)
 - Styling: [Tailwind CSS](https://tailwindcss.com/)
 - Animations: [Framer Motion](https://www.framer.com/motion/)

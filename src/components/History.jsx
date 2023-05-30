@@ -42,7 +42,7 @@ const History = ({
   return (
     <motion.div
       className="flex flex-col gap-1 max-h-60 overflow-y-auto"
-      key="history"
+      key={articlesHistory}
       variants={variants}
       initial="hide"
       animate="show"

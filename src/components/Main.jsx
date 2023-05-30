@@ -39,6 +39,10 @@ const Main = () => {
     const { data } = await getSummary({
       articleUrl: article.url,
     });
+    console.log(
+      `fetching ${isFetching}, showing summary ${showSummary}, article ${article.url}`
+    );
+    setShowSummary(true);
     if (data?.summary) {
       const newArticle = { ...article, summary: data.summary };
       const updatedArticlesHistory = [newArticle, ...articlesHistory];
@@ -47,7 +51,6 @@ const Main = () => {
 
       localStorage.setItem("articles", JSON.stringify(updatedArticlesHistory));
     }
-    setShowSummary(true);
   };
 
   const handleScrollIntoView = () => {
@@ -66,13 +69,12 @@ const Main = () => {
       <Search
         article={article}
         setArticle={setArticle}
-        setArticlesHistory={setArticlesHistory}
         handleSubmit={handleSubmit}
       />
       <AnimatePresence>
-        <section className="flex flex-col gap-3 w-full">
+        <section className="flex flex-col gap-3 w-full" key="history">
           <h2
-            className="flex items-center gap-1 font-title font-bold text-slate-100 text-2xl capitalize hover:cursor-pointer hover:underline w-1/3 group"
+            className="flex items-center gap-1 font-title font-bold text-slate-100 text-2xl capitalize hover:cursor-pointer hover:underline w-1/3 max-sm:w-full group"
             onClick={() => setShowHistory(!showHistory)}
           >
             Summary history
@@ -93,19 +95,20 @@ const Main = () => {
             />
           )}
         </section>
-        <section ref={scrollRef}>
-          {showSummary && (
-            <SummaryResult
-              article={article}
-              error={error}
-              isFetching={isFetching}
-            />
-          )}
+        <section ref={scrollRef} key="summary">
+          <SummaryResult
+            article={article}
+            error={error}
+            isFetching={isFetching}
+          />
         </section>
         <section
-          className={`mx-auto w-full ${
-            showSummary || showAbout ? "relative" : "absolute px-14 bottom-0"
+          className={`mx-auto w-full mb-2 ${
+            showSummary || showAbout
+              ? "relative"
+              : "absolute px-14 bottom-0 max-sm:px-6"
           }`}
+          key="about"
         >
           <About
             showAbout={showAbout}

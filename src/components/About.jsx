@@ -34,10 +34,18 @@ const About = ({ showAbout, setShowAbout }) => {
         <div
           className={`flex items-center gap-2 text-xl ${showAbout && "hidden"}`}
         >
-          <a href="" target="_blank" className="hover:text-slate-100/80">
+          <a
+            href="https://twitter.com/franklin_assa"
+            target="_blank"
+            className="hover:text-slate-100/80"
+          >
             <AiOutlineTwitter />
           </a>
-          <a href="" target="_blank" className="hover:text-slate-100/80">
+          <a
+            href="https://www.facebook.com/franklinassa"
+            target="_blank"
+            className="hover:text-slate-100/80"
+          >
             <AiFillFacebook />
           </a>
           <span className="text-xs">
@@ -97,10 +105,18 @@ const About = ({ showAbout, setShowAbout }) => {
       )}
       {showAbout && (
         <div className="flex justify-end items-center gap-2 text-xl mt-12 mb-4  text-slate-100 font-body">
-          <a href="" target="_blank" className="hover:text-slate-100/80">
+          <a
+            href="https://twitter.com/franklin_assa"
+            target="_blank"
+            className="hover:text-slate-100/80"
+          >
             <AiOutlineTwitter />
           </a>
-          <a href="" target="_blank" className="hover:text-slate-100/80">
+          <a
+            href="https://www.facebook.com/franklinassa"
+            target="_blank"
+            className="hover:text-slate-100/80"
+          >
             <AiFillFacebook />
           </a>
           <span className="text-xs">

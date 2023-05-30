@@ -17,6 +17,7 @@ const SummaryResult = ({ article, error, isFetching }) => {
       opacity: 0,
     },
   };
+
   return (
     <motion.div
       className="mb-2 max-w-full flex justify-center items-center"
