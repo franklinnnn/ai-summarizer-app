@@ -39,10 +39,6 @@ const Main = () => {
     const { data } = await getSummary({
       articleUrl: article.url,
     });
-    console.log(
-      `fetching ${isFetching}, showing summary ${showSummary}, article ${article.url}`
-    );
-    setShowSummary(true);
     if (data?.summary) {
       const newArticle = { ...article, summary: data.summary };
       const updatedArticlesHistory = [newArticle, ...articlesHistory];

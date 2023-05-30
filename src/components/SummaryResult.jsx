@@ -41,9 +41,7 @@ const SummaryResult = ({ article, error, isFetching }) => {
             <ImSad />
           </span>
           Something's gone wrong <br />{" "}
-          <span className="font-body font-normal text-gray-700">
-            {error?.data?.error}
-          </span>
+          <span className="font-body ">{error?.data?.error}</span>
         </p>
       ) : (
         article.summary && (
