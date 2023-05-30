@@ -1,6 +1,7 @@
 import React from "react";
 import { loader } from "../assets";
 import { motion } from "framer-motion";
+import { ImSad } from "react-icons/im";
 
 const SummaryResult = ({ article, error, isFetching }) => {
   const variants = {
@@ -35,7 +36,8 @@ const SummaryResult = ({ article, error, isFetching }) => {
           </span>
         </div>
       ) : error ? (
-        <p className="font-title font-bold text-black text-center">
+        <p className="flex flex-col gap-2 justify-center font-title font-bold text-slate-100 text-center">
+          <ImSad />
           Something's gone wrong <br />{" "}
           <span className="font-body font-normal text-gray-700">
             {error?.data?.error}
