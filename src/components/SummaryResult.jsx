@@ -36,8 +36,10 @@ const SummaryResult = ({ article, error, isFetching }) => {
           </span>
         </div>
       ) : error ? (
-        <p className="flex flex-col gap-2 justify-center font-title font-bold text-slate-100 text-center">
-          <ImSad />
+        <p className="flex flex-col gap-2 items-center justify-center font-title font-bold text-slate-100 text-center">
+          <span className="text-2xl">
+            <ImSad />
+          </span>
           Something's gone wrong <br />{" "}
           <span className="font-body font-normal text-gray-700">
             {error?.data?.error}
