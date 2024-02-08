@@ -1,6 +1,9 @@
 import "./App.css";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import Nav from "./components/Nav";
-import Main from "./components/Main";
+import Home from "./components/Home";
 import Footer from "./components/Footer";
 
 const App = () => {
@@ -9,8 +12,10 @@ const App = () => {
       <div className="main">
         <div className="gradient" />
       </div>
+      <ToastContainer />
       <Nav />
-      <Main />
+      <Home />
+      <Footer />
     </main>
   );
 };

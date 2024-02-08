@@ -1,44 +1,28 @@
-import React from "react";
-import { loader } from "../assets";
 import { motion } from "framer-motion";
 import { ImSad } from "react-icons/im";
 
-const SummaryResult = ({ article, error, isFetching }) => {
-  const variants = {
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        ease: "easeOut",
-        duration: 0.85,
-      },
-    },
-    hide: {
-      y: -20,
-      opacity: 0,
-    },
+import { componentMotions } from "../util/motion";
+import Button from "./ui/Button";
+
+const SummaryResult = ({ article, error, setArticle }) => {
+  const handleNewSummary = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    setArticle({ url: "" });
   };
 
   return (
     <motion.div
-      className="mb-2 max-w-full flex justify-center items-center"
+      className="mb-2 max-w-full flex flex-col justify-center items-center"
       key={article.url}
-      variants={variants}
+      variants={componentMotions}
       initial="hide"
       animate="show"
       exit="hide"
     >
-      {isFetching ? (
-        <div className="flex flex-col items-center">
-          <img src={loader} alt="loader" className="w-24 h-24 object-contain" />
-          <span className="text-slate-100 text-lg font-body">
-            Summarizing your article...
-          </span>
-        </div>
-      ) : error ? (
+      {error ? (
         <p className="flex flex-col gap-2 items-center justify-center font-title font-bold text-slate-100 text-center">
           <span className="text-2xl">
-            <ImSad />
+            <ImSad siez={32} />
           </span>
           Something's gone wrong <br />{" "}
           <span className="font-body ">{error?.data?.error}</span>
@@ -46,13 +30,17 @@ const SummaryResult = ({ article, error, isFetching }) => {
       ) : (
         article.summary && (
           <div className="flex flex-col gap-3">
-            <h2 className="font-title font-bold text-slate-100 text-2xl capitalize">
+            <h2 className="font-title h-full font-bold text-slate-100 text-3xl">
               Article summary
             </h2>
-            <div className="rounded-sm border border-slate-100 bg-slate-100 backdrop-blur p-4">
-              <p className="font-body font-medium text-lg text-slate-900 max-sm:text-base">
+            <div className="rounded-md border border-slate-100 bg-slate-100 shadow-md backdrop-blur p-4">
+              <p className="font-body font-medium text-xl text-justify text-slate-900 max-sm:text-base">
                 {article.summary}
               </p>
+            </div>
+
+            <div className="w-full flex justify-end mt-2">
+              <Button onClick={handleNewSummary}>New summary</Button>
             </div>
           </div>
         )

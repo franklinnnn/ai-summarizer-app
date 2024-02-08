@@ -1,34 +1,46 @@
-import React from "react";
-import { FiLink2 } from "react-icons/fi";
+import { motion } from "framer-motion";
+import { componentMotions } from "../util/motion";
+import Languages from "./ui/Languages";
+import Button from "./ui/Button";
 
-const Search = ({ article, setArticle, handleSubmit }) => {
+const Search = ({
+  article,
+  setArticle,
+  handleSubmit,
+  isFetching,
+  setLanguage,
+}) => {
   return (
-    <section className="flex flex-col w-full gap-2">
+    <motion.section
+      variants={componentMotions}
+      initial="hide"
+      animate="show"
+      exit="hide"
+      className="flex flex-col w-full gap-2"
+    >
       <form
-        className="relative flex justify-center items-center"
+        className="relative flex flex-col justify-center items-center gap-4"
         onSubmit={handleSubmit}
       >
-        <div className="absolute left-0 my-2 ml-3 w-5 text-slate-500">
-          <FiLink2 />
+        <div className="flex justify-between w-full bg-slate-100 rounded-md">
+          <input
+            type="url"
+            placeholder="Enter URL"
+            value={article.url}
+            onChange={(e) => {
+              setArticle({ ...article, url: e.target.value });
+            }}
+            required
+            className="block w-full rounded-md border border-gray-200 bg-slate-100 py-2.5 px-6 text-sm shadow-lg font-body font-medium focus:outline-none focus:ring-0 peer"
+          />
+          <Languages setLanguage={setLanguage} />
         </div>
-        <input
-          type="url"
-          placeholder="Enter URL"
-          value={article.url}
-          onChange={(e) => {
-            setArticle({ ...article, url: e.target.value });
-          }}
-          required
-          className="block w-full rounded-sm border border-gray-200 bg-white py-2.5 pl-10 pr-12 text-sm shadow-lg font-body font-medium focus:border-black focus:outline-none focus:ring-0 peer"
-        />
-        <button
-          type="submit"
-          className="hover:border-slate-700 hover:text-slate-900 absolute inset-y-0 right-0 my-1.5 mr-1.5 flex w-10 items-center justify-center rounded border border-slate-200 font-sans text-sm font-medium text-slate-400 peer-focus:border-slate-700 peer-focus:text-slate-700"
-        >
-          Enter
-        </button>
+        <Button type="submit" disabled={!article.url}>
+          {" "}
+          {isFetching ? "Summarizing..." : "Summarize"}
+        </Button>
       </form>
-    </section>
+    </motion.section>
   );
 };
 

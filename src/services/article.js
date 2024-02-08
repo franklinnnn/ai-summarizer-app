@@ -18,9 +18,18 @@ export const articleApi = createApi({
   endpoints: (builder) => ({
     getSummary: builder.query({
       query: (params) =>
+        // {
+        //   const { articleUrl, translateLanguageTo } = params;
+        //   console.log(params);
+        //   return {
+        //     url: `/summarize?url=${encodeURIComponent(
+        //       articleUrl
+        //     )}&length=5&lang${translateLanguageTo}`,
+        //   };
+        // },
         `/summarize?url=${encodeURIComponent(
           params.articleUrl
-        )}&length=5&lang=en`,
+        )}&length=5&lang=${params.translateLanguageTo}`,
     }),
   }),
 });

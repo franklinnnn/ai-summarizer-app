@@ -1,4 +1,3 @@
-import React from "react";
 import { logo } from "../assets";
 
 const Nav = () => {
@@ -16,15 +15,17 @@ const Nav = () => {
           />
           Summable
         </a>
-        <button
-          type="button"
-          onClick={() =>
-            window.open("https://github.com/franklinnnn/ai-summarizer-app")
-          }
-          className="font-body text-slate-100 bg-slate-100/40 py-1 px-4 rounded border border-slate-100/60 hover:text-slate-800 hover:bg-slate-100 transition-all max-sm:text-sm max-sm:px-2"
-        >
-          GitHub
-        </button>
+        <div>
+          <button
+            type="button"
+            onClick={() =>
+              window.open("https://github.com/franklinnnn/ai-summarizer-app")
+            }
+            className="font-body text-slate-100 bg-slate-100/40 py-1 px-4 rounded border border-slate-100/60 hover:text-slate-800 hover:bg-slate-100 transition-all max-sm:text-sm max-sm:px-2"
+          >
+            GitHub
+          </button>
+        </div>
       </div>
     </nav>
   );

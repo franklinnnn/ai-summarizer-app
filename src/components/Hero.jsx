@@ -1,6 +1,14 @@
+import { motion } from "framer-motion";
+import { componentMotions } from "../util/motion";
+
 const Hero = () => {
   return (
-    <section>
+    <motion.section
+      variants={componentMotions}
+      initial="hide"
+      animate="show"
+      exit="hide"
+    >
       <header className="w-full flex justify-center items-center flex-col">
         <h1 className="font-title mt-5 text-5xl font-extrabold leading-[1.15] text-slate-100 sm:text-6xl text-center">
           Summarize articles with
@@ -12,7 +20,7 @@ const Hero = () => {
           Simplify your reading with Summable, an open-source article summarizer
         </h2>
       </header>
-    </section>
+    </motion.section>
   );
 };
 
